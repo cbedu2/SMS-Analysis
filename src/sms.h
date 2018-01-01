@@ -36,6 +36,10 @@ public:
         return time;
     }
 
+    void print(){
+        cout << "\n" << time <<  endl;
+        cout << message << endl;
+    }
     bool operator== (const SMS cmp)
     {
         return  message.find(cmp.message)!=std::string::npos && (cmp.time==time);
