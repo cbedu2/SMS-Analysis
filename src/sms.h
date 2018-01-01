@@ -38,6 +38,10 @@ public:
         return time;
     }
 
+    const bool getSent(){
+        return sent;
+    }
+
     void print(){
 
         if(sent){
