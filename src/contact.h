@@ -53,6 +53,21 @@ public:
         Messages.push_back(newMessage);
     }
 
+    void printMessages(){
+        for(SMS &message : Messages){
+            
+            cout <<"\n";
+            if(message.getSent()){
+                cout << "You ";
+            }
+            else{
+                
+                cout << name << " ";
+            }
+            message.print();
+        }
+        cout <<"\n\nEnd of messages\n";
+    }
     bool operator== (Contact cmp )
     {
         return  cmp.number == number;
