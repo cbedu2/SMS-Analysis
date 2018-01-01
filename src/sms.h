@@ -21,12 +21,14 @@ class SMS
 private:
     long time;
     string message;
+    bool sent;
+
     SMS(){
 
     }
 public:
-    SMS(string message,long time)
-    :message(message),time(time){
+    SMS(string message,long time,bool sent)
+    :message(message),time(time),sent(sent){
     }
 
     const string getMessage(){
@@ -37,7 +39,14 @@ public:
     }
 
     void print(){
-        cout << "\n" << time <<  endl;
+
+        if(sent){
+            cout << "Sent: ";
+        }else{
+            cout << "Recieved: ";
+        }
+
+        cout << time <<  endl;
         cout << message << endl;
     }
     bool operator== (const SMS cmp)
